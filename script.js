@@ -1,4 +1,4 @@
-const songs = ["song1.mp3", "song2.mp3", "song3.mp3"]; // Add more song files here
+const songs = ["Song1.mp3", "Song2.mp3", "Song3.mp3"]; // Add more song files here
 let currentSongIndex = 0;
 
 const audioPlayer = document.getElementById("audio-player");
