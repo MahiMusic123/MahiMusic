@@ -27,8 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
     function nextSong() {
         currentSongIndex = (currentSongIndex + 1) % songs.length;
         audioPlayer.src = songs[currentSongIndex];
+        audioPlayer.load();  // Load the new audio source
         playSong();
     }
+
+    // Error listener for audio loading issues
+    audioPlayer.addEventListener("error", () => {
+        console.error(`Failed to load audio file: ${songs[currentSongIndex]}`);
+    });
 
     // Make functions globally accessible
     window.playSong = playSong;
